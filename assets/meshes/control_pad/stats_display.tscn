@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://bos2cfyf3pkmr"]
+
+[ext_resource type="Script" uid="uid://w236pvc3q733" path="res://assets/meshes/control_pad/stats_display.gd" id="1_rtwy5"]
+
+[node name="StatsDisplay" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtwy5")
+
+[node name="ResetHeightButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0269097
+anchor_top = 0.0401235
+anchor_right = 0.121528
+anchor_bottom = 0.0756173
+offset_right = 8.0
+offset_bottom = 8.0
+text = "RESET HEIGHT"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
+modulate = Color(0.827451, 0.160784, 0.172549, 1)
+layout_mode = 2
+value = 56.0
+
+[node name="ManaBar" type="ProgressBar" parent="VBoxContainer"]
+modulate = Color(0.227451, 0.282353, 0.835294, 1)
+layout_mode = 2
+value = 45.0

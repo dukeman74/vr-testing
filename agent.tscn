@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b41g8wqwxp2di"]
+
+[ext_resource type="Script" uid="uid://dvu4f5kat48fe" path="res://agent.gd" id="1_hwxci"]
+[ext_resource type="Script" uid="uid://cbf6x4jt3jahw" path="res://addons/godot-xr-tools/rumble/rumble_event.gd" id="2_kp54u"]
+
+[sub_resource type="Resource" id="Resource_w3i2b"]
+script = ExtResource("2_kp54u")
+magnitude = 0.1
+active_during_pause = false
+indefinite = false
+duration_ms = 20
+
+[node name="Agent" type="Node"]
+script = ExtResource("1_hwxci")
+hit_rumble = SubResource("Resource_w3i2b")

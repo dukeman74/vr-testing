@@ -1,0 +1,652 @@
+[gd_scene load_steps=67 format=3 uid="uid://40a3andy74bw"]
+
+[ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bmudkqjkol74n" path="res://scenes/demo_scene_base.gd" id="2_nosao"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_xkd6u"]
+[ext_resource type="Environment" uid="uid://c75hc5t2ml5re" path="res://demo_env.tres" id="3_tyrna"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="5"]
+[ext_resource type="Script" uid="uid://cbf6x4jt3jahw" path="res://addons/godot-xr-tools/rumble/rumble_event.gd" id="5_52kww"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bjcxf427un2wp" path="res://addons/godot-xr-tools/player/poke/poke.tscn" id="6_5im4s"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="6_vqlyr"]
+[ext_resource type="PackedScene" uid="uid://cvokcudrffkgc" path="res://addons/godot-xr-tools/functions/movement_glide.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="8"]
+[ext_resource type="Material" uid="uid://p0q2df2dmy62" path="res://addons/godot-xr-tools/hands/materials/ghost_hand.tres" id="8_cr7b0"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="9"]
+[ext_resource type="Material" uid="uid://cplev8yxpxttu" path="res://assets/wahooney.itch.io/green_grid_triplanar.tres" id="10"]
+[ext_resource type="PackedScene" uid="uid://bwr0eqi231lf0" path="res://assets/meshes/control_pad/control_pad_location_left.tscn" id="10_3kap6"]
+[ext_resource type="PackedScene" uid="uid://bt8kw5a34upwm" path="res://scenes/climbing_gliding_demo/objects/cliff.tscn" id="11"]
+[ext_resource type="Texture2D" uid="uid://ckw6nliyayo6a" path="res://scenes/main_menu/return to main menu.png" id="13"]
+[ext_resource type="PackedScene" uid="uid://deyk5frilshws" path="res://assets/meshes/control_pad/control_pad_location_right.tscn" id="13_76s1p"]
+[ext_resource type="PackedScene" uid="uid://3a6wjr3a13vd" path="res://assets/meshes/teleport/teleport.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="15"]
+[ext_resource type="PackedScene" uid="uid://1mb16xioom74" path="res://scenes/pickable_demo/objects/belt_snap_zone.tscn" id="15_fi024"]
+[ext_resource type="PackedScene" uid="uid://cm0cpldqa6j4d" path="res://scenes/climbing_gliding_demo/objects/hill.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://b41g8wqwxp2di" path="res://agent.tscn" id="16_rijkv"]
+[ext_resource type="Script" uid="uid://c4oeqm2pwq8ol" path="res://scenes/climbing_gliding_demo/player_fade_manager.gd" id="17_7ey5c"]
+[ext_resource type="PackedScene" uid="uid://ct3p5sgwvkmva" path="res://assets/meshes/control_pad/control_pad.tscn" id="18_eubkd"]
+[ext_resource type="AudioStream" uid="uid://b42qacika2hgh" path="res://assets/WAV/heavy breath.wav" id="18_uu4rg"]
+[ext_resource type="Script" uid="uid://bhvxjg31uide1" path="res://scenes/climbing_gliding_demo/sword_arts.gd" id="19_atcod"]
+[ext_resource type="PackedScene" uid="uid://ycpl7nhpr7ip" path="res://assets/quixel scans/longsword_prop.tscn" id="20_3nldn"]
+[ext_resource type="PackedScene" uid="uid://bgts3vpmjn6bb" path="res://addons/godot-xr-tools/functions/movement_wind.tscn" id="22"]
+[ext_resource type="PackedScene" uid="uid://cbp1d2kcmfxft" path="res://assets/quixel scans/mossy_chapel_arch_sboft_high.glb" id="23_ur2am"]
+[ext_resource type="PackedScene" uid="uid://cmk82eg1wyh0f" path="res://assets/quixel scans/castle_structure_sczvi_high.glb" id="24_0grua"]
+[ext_resource type="PackedScene" uid="uid://djkjuy7wct10q" path="res://scenes/pickable_demo/objects/grab_cube.tscn" id="25_q4dwc"]
+[ext_resource type="PackedScene" uid="uid://0xlsitpu17r1" path="res://addons/godot-xr-tools/functions/movement_footstep.tscn" id="26_kc18p"]
+[ext_resource type="PackedScene" uid="uid://q3pa72xp41cq" path="res://scenes/climbing_gliding_demo/objects/ladder.tscn" id="27_mmo3a"]
+[ext_resource type="Script" uid="uid://bawejg40b4xk2" path="res://addons/godot-xr-tools/audio/surface_audio.gd" id="27_ntyq0"]
+[ext_resource type="Script" uid="uid://b2i74oy06ympt" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="28_j16it"]
+[ext_resource type="Texture2D" uid="uid://cg0bm6gkv7jr8" path="res://assets/wahooney.itch.io/green_grid.png" id="29_52i74"]
+[ext_resource type="PackedScene" uid="uid://tay64mlbmh1o" path="res://scenes/climbing_gliding_demo/objects/longsword.tscn" id="29_a3wnn"]
+[ext_resource type="AudioStream" uid="uid://cddgfn5xkknr4" path="res://assets/footsteps/default_footstep.wav" id="29_xl2vp"]
+[ext_resource type="PackedScene" uid="uid://cb252rjy57wm5" path="res://enemy.tscn" id="31_y4xpo"]
+[ext_resource type="Script" uid="uid://dtesvexsd7rhf" path="res://assets/quixel scans/enemy_spawner.gd" id="33_t7c3s"]
+[ext_resource type="PackedScene" uid="uid://cwfhpd0a4scl6" path="res://assets/raykit dungeon/gltf/floor_tile_large.gltf" id="37_hunxo"]
+[ext_resource type="PackedScene" uid="uid://sn4r5ohe7tig" path="res://assets/raykit dungeon/gltf/wall.gltf" id="38_kws7h"]
+
+[sub_resource type="Resource" id="Resource_6nr48"]
+script = ExtResource("5_52kww")
+magnitude = 0.1
+active_during_pause = false
+indefinite = false
+duration_ms = 20
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lr5d6"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_03sdy"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_xb7pi"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j0wve"]
+animation = &"Grip 5"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_en1aj"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0q48o"]
+graph_offset = Vector2(-536, 11)
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_lr5d6")
+nodes/ClosedHand1/position = Vector2(-600, 300)
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_03sdy")
+nodes/ClosedHand2/position = Vector2(-360, 300)
+nodes/Grip/node = SubResource("AnimationNodeBlend2_xb7pi")
+nodes/Grip/position = Vector2(0, 20)
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_j0wve")
+nodes/OpenHand/position = Vector2(-600, 100)
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_en1aj")
+nodes/Trigger/position = Vector2(-360, 20)
+node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ccsh6"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r5lgw"]
+animation = &"Grip"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_68lkx"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yfu85"]
+animation = &"Grip 5"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_2j5sv"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0cwtk"]
+graph_offset = Vector2(-552.664, 107.301)
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_ccsh6")
+nodes/ClosedHand1/position = Vector2(-600, 300)
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_r5lgw")
+nodes/ClosedHand2/position = Vector2(-360, 300)
+nodes/Grip/node = SubResource("AnimationNodeBlend2_68lkx")
+nodes/Grip/position = Vector2(0, 40)
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_yfu85")
+nodes/OpenHand/position = Vector2(-600, 100)
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_2j5sv")
+nodes/Trigger/position = Vector2(-360, 40)
+node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7na2y"]
+resource_local_to_scene = true
+size = Vector2(0.16, 0.08)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4xy8u"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4if6d"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_4xy8u")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o25ma"]
+resource_local_to_scene = true
+size = Vector3(0.16, 0.08, 0.02)
+
+[sub_resource type="Resource" id="Resource_beimw"]
+script = ExtResource("28_j16it")
+name = "default"
+jump_sound = ExtResource("29_xl2vp")
+hit_sound = ExtResource("29_xl2vp")
+walk_sounds = Array[AudioStream]([ExtResource("29_xl2vp"), ExtResource("29_xl2vp")])
+walk_pitch_minimum = 0.8
+walk_pitch_maximum = 1.2
+
+[sub_resource type="BoxMesh" id="1"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="BoxShape3D" id="2"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="Resource" id="Resource_kf444"]
+script = ExtResource("28_j16it")
+name = "Grass"
+jump_sound = ExtResource("29_xl2vp")
+hit_sound = ExtResource("29_xl2vp")
+walk_sounds = Array[AudioStream]([ExtResource("29_xl2vp"), ExtResource("29_xl2vp")])
+walk_pitch_minimum = 0.8
+walk_pitch_maximum = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0q4j"]
+diffuse_mode = 1
+albedo_texture = ExtResource("29_52i74")
+roughness = 0.8
+uv1_triplanar = true
+
+[node name="ClimbingGlidingDemo" instance=ExtResource("1")]
+script = ExtResource("2_nosao")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = ExtResource("3_tyrna")
+
+[node name="XROrigin3D" parent="." index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -44.3895, 13.4469, -33.8127)
+
+[node name="XRCamera3D" parent="XROrigin3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2066, 14.8612, -7.09559)
+far = 400.0
+
+[node name="SwordArts" type="Node3D" parent="XROrigin3D/XRCamera3D" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.6551, -1.8, -49.4853)
+script = ExtResource("19_atcod")
+weapon_ready = SubResource("Resource_6nr48")
+dev_mode = false
+ghost_sword_scene = ExtResource("20_3nldn")
+sword_ghosts = "1,0.02791213989258,0.807861328125,0.03151702880859,0.05973052978516,0.78664779663086,0.08316802978516,0.11112403869629,0.75802898406982,0.12878036499023,0.22876739501953,0.69360542297363,0.18052291870117,0.38344192504883,0.58582592010498,0.22602462768555,0.50388526916504,0.46896171569824,0.25933456420898,0.69763565063477,0.24710464477539,0.25940704345703,0.82883453369141,0.02044582366943,0.23728942871094,0.96635055541992,-0.36046123504639,0.08442687988281,0.97301292419434,-0.74064540863037,-0.14785003662109,0.88334465026855,-1.00838184356689,-0.33982086181641,0.66871643066406,-1.31341934204102,-0.53836822509766,0.51403999328613,-1.45114517211914,-0.61403656005859,e,-49.1456604003906,1.99957001209259,-32.3165817260742,0.90936660766602,0.41473788022995,-0.03231693804264,-0.37905544042587,0.85811567306519,0.3463434278965,0.17137339711189,-0.30270344018936,0.93755084276199!0,-49.1828231811523,1.93474292755127,-32.8341445922852,0.68350225687027,-0.05520758777857,-0.72785753011703,0.58977049589157,-0.54577946662903,0.59522712230682,-0.43011105060577,-0.83610826730728,-0.34048184752464!1,0.07160949707031,0.79409790039063,0.0070686340332,0.25311279296875,0.72688484191895,0.00476455688477,0.48306274414063,0.59638214111328,-0.01350402832031,0.78593063354492,0.28092384338379,-0.06515121459961,0.96285629272461,-0.08560371398926,-0.11100006103516,0.98530960083008,-0.73381805419922,-0.21208572387695,0.77484893798828,-1.20194816589355,-0.29542922973633,0.54420471191406,-1.47099304199219,-0.3016357421875,0.30723190307617,-1.63573455810547,-0.33963012695313,0.16855239868164,-1.68624496459961,-0.43977355957031,0.08894348144531,-1.70703887939453,-0.49483108520508,0.05240631103516,-1.73438835144043,-0.43172836303711,0.07854843139648,-1.72281074523926,-0.40155792236328,e,-49.2370491027832,2.06508922576904,-32.7140312194824,0.92022532224655,0.35200655460358,-0.17110462486744,-0.38450360298157,0.73142743110657,-0.56317830085754,-0.07309188693762,0.58404147624969,0.8084260225296!0,-49.3079605102539,1.89936828613281,-32.5168075561523,0.41932862997055,-0.13470622897148,0.89778470993042,0.8344002366066,-0.33244985342026,-0.43960532546043,0.35768610239029,0.93345153331757,-0.02700680494308!1,-0.01434707641602,0.84039688110352,0.03762435913086,-0.09471893310547,0.91840362548828,0.06035232543945,-0.15567111968994,1.01525115966797,-0.00295257568359,-0.22086620330811,1.15959358215332,-0.1262092590332,-0.34409427642822,1.24913597106934,-0.00496673583984,-0.3295841217041,1.37315464019775,0.05658340454102,e,-49.3943824768066,1.37041425704956,-32.422290802002,0.20484697818756,-0.95621138811111,0.20903933048248,0.96563524007797,0.16252875328064,-0.20281200110912,0.15995638072491,0.24340130388737,0.9566450715065!1,0.01071548461914,0.83524131774902,-0.0144157409668,-0.05105590820313,0.88749694824219,0.04027557373047,-0.05021286010742,0.95624923706055,0.0595703125,-0.13281631469727,1.05929183959961,0.1424674987793,-0.09992980957031,1.20915603637695,0.10874176025391,-0.09114837646484,1.29646873474121,0.14672088623047,-0.17928695678711,1.38180732727051,0.15202331542969,-0.12232971191406,1.44926643371582,0.06031036376953,e,-49.3948059082031,1.36241245269775,-32.8727111816406,0.33704456686974,-0.73704499006271,-0.5858034491539,0.94074666500092,0.28834882378578,0.17846834659576,0.03737646341324,-0.61124432086945,0.79055923223495"
+
+[node name="LeftHand" parent="XROrigin3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.706596, 14.0612, -7.59559)
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("2_xkd6u")]
+hand_material_override = ExtResource("8_cr7b0")
+
+[node name="Skeleton3D" parent="XROrigin3D/LeftHand/LeftHand/Hand_Nails_low_L/Armature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(0.323537, -2.56588e-05, -0.0272204, 0.945824)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.0904441, -0.0415175, -0.166293, 0.981042)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.0466199, 0.020971, 0.0103276, 0.998639)
+bones/4/rotation = Quaternion(-0.0757687, -0.019257, -0.0337124, 0.996369)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.00128455, -0.0116081, -0.0168259, 0.99979)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.102925, -0.00993208, -0.00794416, 0.994608)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(-0.012859, -0.0236108, -0.323258, 0.945929)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.0120575, -0.00929194, -0.247472, 0.968775)
+bones/9/rotation = Quaternion(-0.0522884, -0.000557213, 0.103621, 0.993241)
+bones/10/rotation = Quaternion(-0.0357539, -0.000400032, 0.00636764, 0.99934)
+bones/11/rotation = Quaternion(-0.00264964, -0.00114471, -0.125992, 0.992027)
+bones/12/rotation = Quaternion(0.0394225, 0.00193393, -0.228074, 0.972843)
+bones/13/rotation = Quaternion(-0.0123395, -0.00881294, -0.280669, 0.959685)
+bones/14/rotation = Quaternion(0.0136882, 7.99239e-05, 0.168411, 0.985622)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(-0.0702656, 0.0101908, -0.0243307, 0.99718)
+bones/16/rotation = Quaternion(-0.0320634, -0.00223624, -0.0686366, 0.997124)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(0.0253452, 0.00812462, -0.249005, 0.968136)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(0.00252232, 0.00788073, -0.243204, 0.96994)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.0330517, -0.00671975, 0.126351, 0.991412)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/rotation = Quaternion(-0.0917369, 0.0203027, -0.010183, 0.995524)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(-0.0625182, -0.000225721, -0.115393, 0.991351)
+bones/22/rotation = Quaternion(0.0585786, 0.0216483, -0.269905, 0.96086)
+bones/23/rotation = Quaternion(0.00687177, -0.00357275, -0.211953, 0.977249)
+bones/23/scale = Vector3(1, 1, 1)
+
+[node name="mesh_Hand_Nails_low_L" parent="XROrigin3D/LeftHand/LeftHand/Hand_Nails_low_L/Armature/Skeleton3D" index="0"]
+material_override = ExtResource("8_cr7b0")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="XROrigin3D/LeftHand/LeftHand/Hand_Nails_low_L/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.54083, 0.840813, -0.0231736, -0.0826266, 0.0805243, 0.993322, 0.837064, -0.535304, 0.113023, 0.039902, 0.0402828, -0.150096)
+bone_name = "Index_Tip_L"
+bone_idx = 9
+
+[node name="Poke" parent="XROrigin3D/LeftHand/LeftHand/Hand_Nails_low_L/Armature/Skeleton3D/BoneAttachment3D" index="0" instance=ExtResource("6_5im4s")]
+layer = 0
+mask = 4194304
+push_bodies = false
+
+[node name="AnimationTree" parent="XROrigin3D/LeftHand/LeftHand" index="1"]
+root_node = NodePath("../Hand_Nails_low_L")
+tree_root = SubResource("AnimationNodeBlendTree_0q48o")
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("5")]
+strafe = true
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand" index="2" instance=ExtResource("9")]
+grab_distance = 0.1
+ranged_enable = false
+
+[node name="MovementJump" parent="XROrigin3D/LeftHand" index="3" instance=ExtResource("15")]
+jump_button_action = "ax_button"
+enabled = false
+
+[node name="ControlPadLocationLeft" parent="XROrigin3D/LeftHand" index="4" instance=ExtResource("10_3kap6")]
+
+[node name="RightHand" parent="XROrigin3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7066, 14.0612, -7.59559)
+
+[node name="RightHand" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("6_vqlyr")]
+hand_material_override = ExtResource("8_cr7b0")
+
+[node name="Skeleton3D" parent="XROrigin3D/RightHand/RightHand/Hand_Nails_low_R/Armature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(0.323537, 2.56588e-05, 0.0272204, 0.945824)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.0904441, 0.0415175, 0.166293, 0.981042)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.0466199, -0.020971, -0.0103276, 0.998639)
+bones/4/rotation = Quaternion(-0.0757687, 0.019257, 0.0337124, 0.996369)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.00128455, 0.0116081, 0.0168259, 0.99979)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.102925, 0.00993208, 0.00794419, 0.994608)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(-0.012859, 0.0236108, 0.323258, 0.945929)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.0120575, 0.00929193, 0.247472, 0.968775)
+bones/9/rotation = Quaternion(-0.0522884, 0.000557213, -0.103621, 0.993241)
+bones/10/rotation = Quaternion(-0.0357539, 0.000400032, -0.00636763, 0.99934)
+bones/11/rotation = Quaternion(-0.00264964, 0.00114471, 0.125992, 0.992027)
+bones/12/rotation = Quaternion(0.0394225, -0.00193393, 0.228074, 0.972843)
+bones/13/rotation = Quaternion(-0.0123395, 0.00881294, 0.280669, 0.959685)
+bones/14/rotation = Quaternion(0.0136882, -7.99239e-05, -0.168411, 0.985622)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(-0.0702656, -0.0101908, 0.0243307, 0.99718)
+bones/16/rotation = Quaternion(-0.0320634, 0.00223624, 0.0686366, 0.997124)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(0.0253452, -0.00812462, 0.249005, 0.968136)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(0.00252233, -0.00788073, 0.243204, 0.96994)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.0330517, 0.00671975, -0.126351, 0.991412)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/rotation = Quaternion(-0.0917369, -0.0203027, 0.010183, 0.995524)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(-0.0625182, 0.000225722, 0.115393, 0.991351)
+bones/22/rotation = Quaternion(0.0585786, -0.0216483, 0.269905, 0.96086)
+bones/23/rotation = Quaternion(0.00687177, 0.00357275, 0.211953, 0.977249)
+bones/23/scale = Vector3(1, 1, 1)
+
+[node name="mesh_Hand_Nails_low_R" parent="XROrigin3D/RightHand/RightHand/Hand_Nails_low_R/Armature/Skeleton3D" index="0"]
+material_override = ExtResource("8_cr7b0")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="XROrigin3D/RightHand/RightHand/Hand_Nails_low_R/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.54083, -0.840813, 0.0231736, 0.0826266, 0.0805242, 0.993322, -0.837064, -0.535304, 0.113023, -0.039902, 0.0402828, -0.150096)
+bone_name = "Index_Tip_R"
+bone_idx = 9
+
+[node name="Poke" parent="XROrigin3D/RightHand/RightHand/Hand_Nails_low_R/Armature/Skeleton3D/BoneAttachment3D" index="0" instance=ExtResource("6_5im4s")]
+layer = 0
+mask = 4194304
+push_bodies = false
+
+[node name="AnimationTree" parent="XROrigin3D/RightHand/RightHand" index="1"]
+root_node = NodePath("../Hand_Nails_low_R")
+tree_root = SubResource("AnimationNodeBlendTree_0cwtk")
+
+[node name="MovementDirect" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("5")]
+enabled = false
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" index="2" instance=ExtResource("4")]
+turn_mode = 2
+
+[node name="FunctionPickup" parent="XROrigin3D/RightHand" index="3" instance=ExtResource("9")]
+grab_distance = 0.1
+ranged_enable = false
+
+[node name="MovementJump" parent="XROrigin3D/RightHand" index="4" instance=ExtResource("15")]
+jump_button_action = "ax_button"
+enabled = false
+
+[node name="ControlPadLocationRight" parent="XROrigin3D/RightHand" index="5" instance=ExtResource("13_76s1p")]
+
+[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9302, 12.5199, -30.6813)
+collision_mask = 827
+agent_node = NodePath("PlayerAgent")
+push_rigid_bodies = false
+
+[node name="BeltSnapZone01" parent="XROrigin3D/PlayerBody" index="0" instance=ExtResource("15_fi024")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.177, 1, -0.177)
+
+[node name="BeltSnapZone03" parent="XROrigin3D/PlayerBody" index="1" instance=ExtResource("15_fi024")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.25)
+
+[node name="BeltSnapZone05" parent="XROrigin3D/PlayerBody" index="2" instance=ExtResource("15_fi024")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.177, 1, -0.177)
+
+[node name="PlayerAgent" parent="XROrigin3D/PlayerBody" index="3" instance=ExtResource("16_rijkv")]
+
+[node name="PlayerFadeManager" type="Node" parent="XROrigin3D/PlayerBody" index="4"]
+script = ExtResource("17_7ey5c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/PlayerBody" index="5"]
+stream = ExtResource("18_uu4rg")
+volume_db = -2.0
+
+[node name="MovementClimb" parent="XROrigin3D" index="4" instance=ExtResource("8")]
+fling_multiplier = 0.1
+
+[node name="MovementGlide" parent="XROrigin3D" index="5" instance=ExtResource("7")]
+turn_with_roll = true
+wings_impulse = true
+enabled = false
+
+[node name="MovementWind" parent="XROrigin3D" index="6" instance=ExtResource("22")]
+enabled = false
+
+[node name="ControlPad" parent="XROrigin3D" index="7" instance=ExtResource("18_eubkd")]
+player_agent_path = NodePath("../PlayerBody/PlayerAgent")
+player_body_path = NodePath("../PlayerBody")
+
+[node name="Screen" parent="XROrigin3D/ControlPad/Viewport2Din3D" index="1"]
+mesh = SubResource("QuadMesh_7na2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_4if6d")
+
+[node name="CollisionShape3D" parent="XROrigin3D/ControlPad/Viewport2Din3D/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_o25ma")
+
+[node name="MovementFootstep" parent="XROrigin3D" index="8" instance=ExtResource("26_kc18p")]
+default_surface_audio_type = SubResource("Resource_beimw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="2"]
+transform = Transform3D(0.866025, -0.321394, 0.383022, 0, 0.766044, 0.642788, -0.5, -0.55667, 0.663414, 0, 5, 0)
+light_energy = 0.8
+
+[node name="Terrain" type="Node3D" parent="." index="3"]
+
+[node name="Ground" type="StaticBody3D" parent="Terrain" index="0"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain/Ground" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("1")
+surface_material_override/0 = ExtResource("10")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/Ground" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("2")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Terrain/Ground" index="2"]
+script = ExtResource("27_ntyq0")
+surface_audio_type = SubResource("Resource_kf444")
+
+[node name="Hills" type="Node3D" parent="Terrain" index="1"]
+
+[node name="Hill1" parent="Terrain/Hills" index="0" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158, 0, -45)
+
+[node name="Hill2" parent="Terrain/Hills" index="1" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 0, -142)
+
+[node name="Hill3" parent="Terrain/Hills" index="2" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -142)
+
+[node name="Hill4" parent="Terrain/Hills" index="3" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127, 0, -76)
+
+[node name="Hill5" parent="Terrain/Hills" index="4" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165, 0, -8)
+
+[node name="Hill6" parent="Terrain/Hills" index="5" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176, 0, 84)
+
+[node name="Hill7" parent="Terrain/Hills" index="6" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 163)
+
+[node name="Hill8" parent="Terrain/Hills" index="7" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 164)
+
+[node name="Hill9" parent="Terrain/Hills" index="8" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, 90)
+
+[node name="Hill10" parent="Terrain/Hills" index="9" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113, 0, 45)
+
+[node name="Hill11" parent="Terrain/Hills" index="10" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -37, 46)
+
+[node name="Hill12" parent="Terrain/Hills" index="11" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -44, 87)
+
+[node name="Hill13" parent="Terrain/Hills" index="12" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, -37, -86)
+
+[node name="Hill14" parent="Terrain/Hills" index="13" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, -45, -18)
+
+[node name="Cliffs" type="Node3D" parent="Terrain" index="2"]
+
+[node name="Cliff1" parent="Terrain/Cliffs" index="0" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, -14, -63)
+
+[node name="Cliff2" parent="Terrain/Cliffs" index="1" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, -8, -63)
+
+[node name="Cliff3" parent="Terrain/Cliffs" index="2" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, -2, -62)
+
+[node name="Cliff4" parent="Terrain/Cliffs" index="3" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83, 4, -64)
+
+[node name="Cliff5" parent="Terrain/Cliffs" index="4" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81, 10, -70)
+
+[node name="Cliff6" parent="Terrain/Cliffs" index="5" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87, 16, -65)
+
+[node name="Cliff7" parent="Terrain/Cliffs" index="6" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93, -14, 82)
+
+[node name="Cliff8" parent="Terrain/Cliffs" index="7" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -1, -66)
+
+[node name="Cliff9" parent="Terrain/Cliffs" index="8" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, -2, -18)
+
+[node name="Cliff10" parent="Terrain/Cliffs" index="9" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, -8, -20)
+
+[node name="Cliff11" parent="Terrain/Cliffs" index="10" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -5, 22)
+
+[node name="Cliff12" parent="Terrain/Cliffs" index="11" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3, 30)
+
+[node name="Cliff13" parent="Terrain/Cliffs" index="12" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, -3, -26)
+
+[node name="Cliff14" parent="Terrain/Cliffs" index="13" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, -8, 48)
+
+[node name="Stuff" type="Node3D" parent="Terrain" index="3"]
+
+[node name="Sketchfab_Scene" parent="Terrain/Stuff" index="0" instance=ExtResource("23_ur2am")]
+transform = Transform3D(0.786741, 0, 0.617283, 0, 1, 0, -0.617283, 0, 0.786741, -43.795, 0, -51.9504)
+script = ExtResource("33_t7c3s")
+enemy_scene = ExtResource("31_y4xpo")
+
+[node name="Sketchfab_Scene2" parent="Terrain/Stuff" index="1" instance=ExtResource("24_0grua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1092, 0, -57.5649)
+
+[node name="Dungeon" type="Node3D" parent="Terrain" index="4"]
+
+[node name="floor_tile_large2" parent="Terrain/Dungeon" index="0" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 11, -29)
+
+[node name="floor_tile_large3" parent="Terrain/Dungeon" index="1" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 11, -33)
+
+[node name="floor_tile_large4" parent="Terrain/Dungeon" index="2" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 11, -29)
+
+[node name="floor_tile_large5" parent="Terrain/Dungeon" index="3" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 11, -33)
+
+[node name="floor_tile_large6" parent="Terrain/Dungeon" index="4" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 11, -29)
+
+[node name="floor_tile_large7" parent="Terrain/Dungeon" index="5" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 11, -33)
+
+[node name="floor_tile_large8" parent="Terrain/Dungeon" index="6" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 11, -29)
+
+[node name="floor_tile_large9" parent="Terrain/Dungeon" index="7" instance=ExtResource("37_hunxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 11, -33)
+
+[node name="wall2" parent="Terrain" index="5" instance=ExtResource("38_kws7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 11, -35)
+
+[node name="wall3" parent="Terrain" index="6" instance=ExtResource("38_kws7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 11, -35)
+
+[node name="MainMenuTeleport1" parent="." index="4" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83, 36, -68)
+title = ExtResource("13")
+
+[node name="MainMenuTeleport2" parent="." index="5" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, 6, 81)
+title = ExtResource("13")
+
+[node name="Ladder" parent="." index="6" instance=ExtResource("27_mmo3a")]
+transform = Transform3D(-0.866025, -0.118419, 0.485774, 0, 0.971549, 0.236838, -0.5, 0.205108, -0.841386, -81.4744, 33.4, -70.5593)
+
+[node name="GrabCube" parent="." index="7" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.5619, -63.1848)
+
+[node name="GrabCube22" parent="." index="8" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.5619, -63.8504)
+
+[node name="GrabCube21" parent="." index="9" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.1051, 36.5619, -63.1848)
+
+[node name="GrabCube20" parent="." index="10" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.0425, 36.5619, -63.1848)
+
+[node name="GrabCube19" parent="." index="11" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.5619, -62.5058)
+
+[node name="GrabCube18" parent="." index="12" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.5619, -63.1848)
+
+[node name="GrabCube17" parent="." index="13" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.5157, 37.0466, -63.1848)
+
+[node name="GrabCube15" parent="." index="14" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 37.563, -62.3547)
+
+[node name="GrabCube16" parent="." index="15" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 37.9171, -63.2965)
+
+[node name="GrabCube3" parent="." index="16" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube4" parent="." index="17" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube5" parent="." index="18" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube6" parent="." index="19" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube7" parent="." index="20" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube8" parent="." index="21" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube9" parent="." index="22" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube10" parent="." index="23" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube11" parent="." index="24" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube12" parent="." index="25" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 36.6739, -63.6604)
+
+[node name="GrabCube13" parent="." index="26" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 37.7229, -63.6604)
+
+[node name="GrabCube14" parent="." index="27" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8028, 37.2135, -63.6604)
+
+[node name="GrabCube2" parent="." index="28" instance=ExtResource("25_q4dwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.0865, 37.6372, -63.1848)
+
+[node name="CollisionShape3D" parent="GrabCube2" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="MeshInstance3D" parent="GrabCube2" index="1"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_h0q4j")
+
+[node name="HighlightRing" parent="GrabCube2" index="2"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Longsword" parent="." index="29" instance=ExtResource("29_a3wnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0891, 13.2748, -32.437)
+
+[node name="Enemy" parent="." index="30" instance=ExtResource("31_y4xpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9582, 1.74034, -12.9677)
+
+[node name="Enemy2" parent="." index="31" instance=ExtResource("31_y4xpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0113, 1.74034, -8.27882)
+
+[node name="Enemy3" parent="." index="32" instance=ExtResource("31_y4xpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.118, 1.74034, -8.27882)
+
+[node name="Enemy4" parent="." index="33" instance=ExtResource("31_y4xpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.118, 1.74034, -1.22975)
+
+[node name="Enemy5" parent="." index="34" instance=ExtResource("31_y4xpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5514, 1.74034, -1.22975)
+
+[connection signal="taken_damage" from="XROrigin3D/PlayerBody/PlayerAgent" to="XROrigin3D/PlayerBody/PlayerFadeManager" method="start_damage" unbinds=1]
+[connection signal="taken_damage" from="XROrigin3D/PlayerBody/PlayerAgent" to="XROrigin3D/PlayerBody/AudioStreamPlayer3D" method="play" unbinds=1]
+
+[editable path="XROrigin3D/LeftHand/LeftHand"]
+[editable path="XROrigin3D/LeftHand/LeftHand/Hand_Nails_low_L"]
+[editable path="XROrigin3D/RightHand/RightHand"]
+[editable path="XROrigin3D/RightHand/RightHand/Hand_Nails_low_R"]
+[editable path="XROrigin3D/ControlPad"]
+[editable path="XROrigin3D/ControlPad/Viewport2Din3D"]
+[editable path="GrabCube2"]

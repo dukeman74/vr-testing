@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh8y2y2ph0ckv"]
+
+[ext_resource type="PackedScene" uid="uid://brdpvtaeiy4f3" path="res://assets/quixel scans/wooden_chest_wljmbc0_high.glb" id="1_klled"]
+
+[node name="Chest" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_klled")]
+
+[node name="wljmbc0_LOD0_TIER1_001" parent="Sketchfab_Scene/Sketchfab_model/Wooden_Chest_wljmbc0_High_fbx/RootNode/world_root" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.57491, -10.2688)
+
+[node name="wljmbc0_LOD0_TIER1_001_MatID_1_0" parent="Sketchfab_Scene/Sketchfab_model/Wooden_Chest_wljmbc0_High_fbx/RootNode/world_root/wljmbc0_LOD0_TIER1_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.76455, 10.2442)
+
+[editable path="Sketchfab_Scene"]

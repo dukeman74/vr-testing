@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://ct3p5sgwvkmva"]
+
+[ext_resource type="Script" uid="uid://we70x7pikj65" path="res://assets/meshes/control_pad/control_pad.gd" id="1_gm1fj"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_q3mfi"]
+[ext_resource type="PackedScene" uid="uid://bos2cfyf3pkmr" path="res://assets/meshes/control_pad/stats_display.tscn" id="3_ddi8b"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ew831"]
+resource_local_to_scene = true
+size = Vector2(0.16, 0.08)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ks3vf"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2imno"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_ks3vf")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hfblx"]
+resource_local_to_scene = true
+size = Vector3(0.16, 0.08, 0.02)
+
+[node name="ControlPad" type="Node3D"]
+visible = false
+script = ExtResource("1_gm1fj")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_q3mfi")]
+screen_size = Vector2(0.16, 0.08)
+collision_layer = 4194304
+scene = ExtResource("3_ddi8b")
+viewport_size = Vector2(400, 200)
+update_mode = 2
+throttle_fps = 15.0
+transparent = 0
+unshaded = true
+scene_properties_keys = PackedStringArray("stats_display.gd")
+
+[node name="Viewport" parent="Viewport2Din3D" index="0"]
+transparent_bg = false
+size = Vector2i(400, 200)
+
+[node name="Screen" parent="Viewport2Din3D" index="1"]
+mesh = SubResource("QuadMesh_ew831")
+surface_material_override/0 = SubResource("StandardMaterial3D_2imno")
+
+[node name="StaticBody3D" parent="Viewport2Din3D" index="2"]
+collision_layer = 4194304
+screen_size = Vector2(0.16, 0.08)
+viewport_size = Vector2(400, 200)
+
+[node name="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_hfblx")
+
+[editable path="Viewport2Din3D"]
