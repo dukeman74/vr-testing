@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://drygg2ac1lik1"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://drygg2ac1lik1"]
 
 [ext_resource type="Texture2D" uid="uid://m41rmdmflqkc" path="res://assets/quixel scans/sword_uitlbiaga_high_0.jpg" id="1_6qqvs"]
 [ext_resource type="Texture2D" uid="uid://s3c7nvpsayvx" path="res://assets/quixel scans/sword_uitlbiaga_high_1.jpg" id="2_gmttr"]

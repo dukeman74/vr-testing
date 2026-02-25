@@ -10,7 +10,7 @@ metadata={
 "vram_texture": true
 }
 generator_parameters={
-"md5": "33bc23b5fcff1f90183c78520284a547"
+"md5": "0e696f36480d2546cce8498d6d3ca36c"
 }
 
 [deps]
@@ -23,6 +23,8 @@ dest_files=["res://.godot/imported/sword_uitlbiaga_high_1.jpg-32acaea3867078291f
 compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -30,6 +32,10 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=8
 roughness/src_normal="res://assets/quixel scans/sword_uitlbiaga_high_2.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

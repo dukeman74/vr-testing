@@ -15,9 +15,11 @@ dest_files=["res://.godot/imported/teleport.glb-112a12b81cc29759a2447576b0d3f192
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
+nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -32,19 +34,25 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
 _subresources={
 "materials": {
 "Body": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/maps/holodeck/materials/base.material"
+"use_external/fallback_path": "res://assets/maps/holodeck/materials/base.material",
+"use_external/path": "uid://cliyhjfvy8pfd"
 },
 "Teleport": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/meshes/teleport/teleport_area_shader.tres"
+"use_external/fallback_path": "res://assets/meshes/teleport/teleport_area_shader.tres",
+"use_external/path": "uid://d4nr1joloeff8"
 },
 "Title": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/meshes/teleport/teleport_title_material.tres"
+"use_external/fallback_path": "res://assets/meshes/teleport/teleport_title_material.tres",
+"use_external/path": "uid://c26e12f2whdrj"
 }
 },
 "nodes": {

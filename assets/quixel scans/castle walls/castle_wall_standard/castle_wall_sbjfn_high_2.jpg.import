@@ -10,7 +10,7 @@ metadata={
 "vram_texture": true
 }
 generator_parameters={
-"md5": "379b596a6bf66e32aa53e08d1b82fdb7"
+"md5": "49988bf9c89fc1bfbac6b89342b02018"
 }
 
 [deps]
@@ -23,6 +23,8 @@ dest_files=["res://.godot/imported/castle_wall_sbjfn_high_2.jpg-3a175ac419dfbc8c
 compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=1
 compress/channel_pack=0
@@ -30,6 +32,10 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
 roughness/src_normal="res://assets/quixel scans/castle walls/castle_wall_standard/castle_wall_sbjfn_high_2.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
