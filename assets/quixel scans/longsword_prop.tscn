@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ycpl7nhpr7ip"]
+[gd_scene format=3 uid="uid://ycpl7nhpr7ip"]
 
 [ext_resource type="PackedScene" uid="uid://ek56lyqy12jn" path="res://assets/quixel scans/sword_uitlbiaga_high.glb" id="1_ffxy6"]
-[ext_resource type="Script" uid="uid://c7gejq1luavev" path="res://longsword_prop.gd" id="2_naf1a"]
-[ext_resource type="PackedScene" uid="uid://c6sbt2awxafv8" path="res://weapon_path_marker.tscn" id="3_d74lq"]
+[ext_resource type="Script" uid="uid://c7gejq1luavev" path="res://combat/FairXRweapon/longsword/longsword_prop.gd" id="2_naf1a"]
+[ext_resource type="PackedScene" uid="uid://c6sbt2awxafv8" path="res://combat/FairXRweapon/longsword/weapon_path_marker.tscn" id="3_d74lq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h2om"]
 resource_local_to_scene = true

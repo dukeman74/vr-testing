@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkr1jkk3jerux"]
 
 [ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1"]
-[ext_resource type="Script" uid="uid://b0d4ccmu2upui" path="res://demo_staging.gd" id="2"]
+[ext_resource type="Script" uid="uid://b0d4ccmu2upui" path="res://stager/demo_staging.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://ftrrxm7sxndi" path="res://assets/godot/splash.png" id="3_2an2h"]
 
 [node name="DemoStaging" unique_id=521663266 instance=ExtResource("1")]

@@ -1,13 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://tay64mlbmh1o"]
+[gd_scene format=3 uid="uid://tay64mlbmh1o"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_sp75n"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_an4vv"]
 [ext_resource type="Script" uid="uid://b7klyjmrsxaa8" path="res://scenes/climbing_gliding_demo/objects/longsword.gd" id="2_kpj2r"]
 [ext_resource type="Script" uid="uid://cbf6x4jt3jahw" path="res://addons/godot-xr-tools/rumble/rumble_event.gd" id="3_wkdng"]
-[ext_resource type="Resource" uid="uid://x3n174pladth" path="res://always_closed_right_hand.tres" id="3_xxupo"]
+[ext_resource type="Resource" uid="uid://x3n174pladth" path="res://combat/FairXRweapon/always_closed_right_hand.tres" id="3_xxupo"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_i83rl"]
 [ext_resource type="AudioStream" uid="uid://bghkovsfi83n4" path="res://assets/WAV/sword sheathed.wav" id="5_uw3k2"]
-[ext_resource type="Resource" uid="uid://bo1i84nuh0ggj" path="res://always_closed_left_hand.tres" id="5_v10w5"]
+[ext_resource type="Resource" uid="uid://bo1i84nuh0ggj" path="res://combat/FairXRweapon/always_closed_left_hand.tres" id="5_v10w5"]
 [ext_resource type="PackedScene" uid="uid://ek56lyqy12jn" path="res://assets/quixel scans/sword_uitlbiaga_high.glb" id="7_xlek3"]
 [ext_resource type="AudioStream" uid="uid://blbdrprt3ase3" path="res://assets/WAV/draw sword.wav" id="8_5n0eg"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="8_sw7il"]
@@ -20,8 +20,6 @@
 [sub_resource type="Resource" id="Resource_mah7o"]
 script = ExtResource("3_wkdng")
 magnitude = 1.0
-active_during_pause = false
-indefinite = false
 duration_ms = 50
 
 [sub_resource type="BoxShape3D" id="1"]
@@ -31,7 +29,7 @@ size = Vector3(0.015, 0.015, 0.17)
 height = 1.0
 radius = 0.02
 
-[node name="Longsword" instance=ExtResource("1_sp75n")]
+[node name="Longsword" unique_id=1601847818 instance=ExtResource("1_sp75n")]
 collision_mask = 7
 script = ExtResource("2_kpj2r")
 parry_feedback = SubResource("Resource_mah7o")
@@ -42,14 +40,14 @@ required_swing_speed = 3.2
 ranged_grab_method = 0
 second_hand_grab = 2
 
-[node name="GrabPointBaseRight" parent="." index="0" instance=ExtResource("4_i83rl")]
+[node name="GrabPointBaseRight" parent="." index="0" unique_id=1720471464 instance=ExtResource("4_i83rl")]
 transform = Transform3D(3.69983e-08, -0.073273, -0.997312, -8.20137e-08, -0.997312, 0.0732731, -1, 7.90823e-08, -4.29083e-08, 0.0851169, -0.00998724, 0.0100627)
 angle_add = Vector3(4.9, 0, 0)
 position_add = Vector3(0, -0.08, 0)
 mode = 1
 hand_pose = ExtResource("3_xxupo")
 
-[node name="GrabPointTopLeft" parent="." index="1" instance=ExtResource("2_an4vv")]
+[node name="GrabPointTopLeft" parent="." index="1" unique_id=878289482 instance=ExtResource("2_an4vv")]
 transform = Transform3D(-0.060954, -0.0479334, -0.996989, -0.00881845, -0.998781, 0.0485588, -0.998102, 0.0117517, 0.060457, 0.0916208, 0.0795374, -0.0176187)
 angle_add = Vector3(4.8, 0, 0)
 position_add = Vector3(0.063, -0.08, 0)
@@ -59,14 +57,14 @@ drive_position = 0.1
 drive_angle = 0.0
 drive_aim = 1.0
 
-[node name="GrabPointBaseLeft" parent="." index="2" instance=ExtResource("2_an4vv")]
+[node name="GrabPointBaseLeft" parent="." index="2" unique_id=370938217 instance=ExtResource("2_an4vv")]
 transform = Transform3D(-0.060954, -0.0479334, -0.996989, -0.00881844, -0.998781, 0.0485588, -0.998102, 0.0117517, 0.060457, 0.0916208, 0.0795374, -0.0176187)
 angle_add = Vector3(4.8, 0, 0)
 position_add = Vector3(0.063, -0.08, 0)
 mode = 1
 hand_pose = ExtResource("5_v10w5")
 
-[node name="GrabPointTopRight" parent="." index="3" instance=ExtResource("4_i83rl")]
+[node name="GrabPointTopRight" parent="." index="3" unique_id=335427469 instance=ExtResource("4_i83rl")]
 transform = Transform3D(3.69983e-08, -0.073273, -0.997312, -8.20137e-08, -0.997312, 0.0732731, -1, 7.90823e-08, -4.29083e-08, 0.0851169, -0.00998724, 0.0100627)
 angle_add = Vector3(4.9, 0, 0)
 position_add = Vector3(0, -0.08, 0)
@@ -80,45 +78,45 @@ drive_aim = 1.0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.0112675, 0)
 shape = SubResource("1")
 
-[node name="CollisionShape2" type="CollisionShape3D" parent="." index="5"]
+[node name="CollisionShape2" type="CollisionShape3D" parent="." index="5" unique_id=44794629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.311412, 0)
 shape = SubResource("3")
 
-[node name="HighlightRing" parent="." index="6" instance=ExtResource("8_sw7il")]
+[node name="HighlightRing" parent="." index="6" unique_id=1370548573 instance=ExtResource("8_sw7il")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0311914, 0)
 
-[node name="Sketchfab_Scene" parent="." index="7" instance=ExtResource("7_xlek3")]
+[node name="Sketchfab_Scene" parent="." index="7" unique_id=748523080 instance=ExtResource("7_xlek3")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
 
-[node name="Sketchfab_model" parent="Sketchfab_Scene" index="0"]
+[node name="Sketchfab_model" parent="Sketchfab_Scene" index="0" unique_id=1457248847]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0.306, 0)
 
-[node name="uitlbiaga_LOD0_TIER1_000_MatID_1_0" parent="Sketchfab_Scene/Sketchfab_model/Sword_uitlbiaga_High_fbx/RootNode/uitlbiaga_LOD0_TIER1_000" index="0"]
+[node name="uitlbiaga_LOD0_TIER1_000_MatID_1_0" parent="Sketchfab_Scene/Sketchfab_model/Sword_uitlbiaga_High_fbx/RootNode/uitlbiaga_LOD0_TIER1_000" parent_id_path=PackedInt32Array(748523080, 2023557780) index="0" unique_id=1981305682]
 surface_material_override/0 = ExtResource("10_p1yd0")
 
-[node name="EquipSound" type="AudioStreamPlayer3D" parent="." index="8"]
+[node name="EquipSound" type="AudioStreamPlayer3D" parent="." index="8" unique_id=754599897]
 stream = ExtResource("8_5n0eg")
 
-[node name="WeaponTip" type="Marker3D" parent="." index="9"]
+[node name="WeaponTip" type="Marker3D" parent="." index="9" unique_id=1483269651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00713179, -0.816265, 0.00393313)
 
-[node name="ParrySound" type="AudioStreamPlayer3D" parent="." index="10"]
+[node name="ParrySound" type="AudioStreamPlayer3D" parent="." index="10" unique_id=1928594868]
 stream = ExtResource("12_f27s1")
 
-[node name="SwingSound" type="AudioStreamPlayer3D" parent="." index="11"]
+[node name="SwingSound" type="AudioStreamPlayer3D" parent="." index="11" unique_id=577768035]
 stream = ExtResource("13_iyt36")
 
-[node name="HitSound" type="AudioStreamPlayer3D" parent="." index="12"]
+[node name="HitSound" type="AudioStreamPlayer3D" parent="." index="12" unique_id=1055698237]
 stream = ExtResource("15_3p7bl")
 
-[node name="SwingTimeout" type="Timer" parent="." index="13"]
+[node name="SwingTimeout" type="Timer" parent="." index="13" unique_id=136729363]
 one_shot = true
 
-[node name="ActiveWeaponLogic" type="Node" parent="." index="14"]
+[node name="ActiveWeaponLogic" type="Node" parent="." index="14" unique_id=915296293]
 script = ExtResource("16_0nfih")
 weapon_path = NodePath("..")
 
-[node name="CanRiposteTimer" type="Timer" parent="." index="15"]
+[node name="CanRiposteTimer" type="Timer" parent="." index="15" unique_id=184576649]
 wait_time = 0.5
 one_shot = true
 

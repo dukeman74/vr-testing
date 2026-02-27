@@ -1,12 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://cb252rjy57wm5"]
+[gd_scene format=3 uid="uid://cb252rjy57wm5"]
 
-[ext_resource type="Script" uid="uid://bqcfxpr7wt7vu" path="res://enemy.gd" id="1_jhji0"]
-[ext_resource type="PackedScene" uid="uid://b41g8wqwxp2di" path="res://agent.tscn" id="2_48hjd"]
-[ext_resource type="Script" uid="uid://dxaxj65kc6ojj" path="res://health_bar_marker.gd" id="2_cq31e"]
-[ext_resource type="Script" uid="uid://b8gncx64pjiwt" path="res://healthbar_manager.gd" id="2_h3mbn"]
+[ext_resource type="Script" uid="uid://bqcfxpr7wt7vu" path="res://combat/enemy/enemy.gd" id="1_jhji0"]
+[ext_resource type="PackedScene" uid="uid://b41g8wqwxp2di" path="res://combat/agent/agent.tscn" id="2_48hjd"]
+[ext_resource type="Script" uid="uid://dxaxj65kc6ojj" path="res://combat/agent/health_bar_marker.gd" id="2_cq31e"]
+[ext_resource type="Script" uid="uid://b8gncx64pjiwt" path="res://combat/agent/healthbar_manager.gd" id="2_h3mbn"]
 [ext_resource type="PackedScene" uid="uid://6k2nlbrvyxpd" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_no_interact.tscn" id="3_1vwgs"]
-[ext_resource type="PackedScene" uid="uid://umsfuavm6ep6" path="res://healthbar.tscn" id="4_fscno"]
-[ext_resource type="PackedScene" uid="uid://bkx1clbhd34lk" path="res://hitbox.tscn" id="4_yucq7"]
+[ext_resource type="PackedScene" uid="uid://umsfuavm6ep6" path="res://combat/agent/healthbar.tscn" id="4_fscno"]
+[ext_resource type="PackedScene" uid="uid://bkx1clbhd34lk" path="res://combat/agent/hitbox.tscn" id="4_yucq7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a1mrc"]
 
@@ -366,7 +366,7 @@ _data = {
 &"run": SubResource("Animation_yfxjx")
 }
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" unique_id=695771986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 2
 collision_mask = 524291
@@ -374,96 +374,94 @@ platform_floor_layers = 4294967283
 script = ExtResource("1_jhji0")
 attack_range = 1.5
 
-[node name="HealthbarManager" type="Node" parent="."]
+[node name="HealthbarManager" type="Node" parent="." unique_id=1986927848]
 script = ExtResource("2_h3mbn")
 path_to_bar = NodePath("../HealthBarMarker")
 path_to_agent = NodePath("../Agent")
 
-[node name="Agent" parent="." instance=ExtResource("2_48hjd")]
+[node name="Agent" parent="." unique_id=1887371469 instance=ExtResource("2_48hjd")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1419970340]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_a1mrc")
 
-[node name="Body" type="MeshInstance3D" parent="."]
+[node name="Body" type="MeshInstance3D" parent="." unique_id=699870503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045634, 0)
 mesh = SubResource("BoxMesh_viqr6")
 surface_material_override/0 = SubResource("StandardMaterial3D_26pe2")
 
-[node name="Hitbox" parent="Body" instance=ExtResource("4_yucq7")]
+[node name="Hitbox" parent="Body" unique_id=915889643 instance=ExtResource("4_yucq7")]
 agent_path = NodePath("../../Agent")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Hitbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Hitbox" unique_id=312187454]
 shape = SubResource("BoxShape3D_nn28p")
 
-[node name="Head" type="MeshInstance3D" parent="Body"]
+[node name="Head" type="MeshInstance3D" parent="Body" unique_id=940138721]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75937, 0.217885, -6.98492e-10)
 mesh = SubResource("BoxMesh_71xir")
 
-[node name="AttackArea" type="Area3D" parent="Body/Head"]
+[node name="AttackArea" type="Area3D" parent="Body/Head" unique_id=450066955]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.903, -0.362, 0)
 collision_layer = 0
 collision_mask = 524352
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Head/AttackArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Head/AttackArea" unique_id=747298894]
 transform = Transform3D(1, -1.48498e-09, 1.86265e-09, 2.73724e-09, 1, -8.00355e-11, 0, -1.27329e-10, 1, 1.111, 0.296, 0)
 shape = SubResource("BoxShape3D_idh24")
 
-[node name="Hitbox" parent="Body/Head" instance=ExtResource("4_yucq7")]
+[node name="Hitbox" parent="Body/Head" unique_id=2049581872 instance=ExtResource("4_yucq7")]
 agent_path = NodePath("../../../Agent")
 multiplier = 1.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Head/Hitbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Head/Hitbox" unique_id=991232665]
 shape = SubResource("BoxShape3D_s44v2")
 
-[node name="Foot1" type="MeshInstance3D" parent="."]
+[node name="Foot1" type="MeshInstance3D" parent="." unique_id=1631217158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735258, -0.4, 0.433289)
 mesh = SubResource("BoxMesh_u6nbs")
 skeleton = NodePath("../Body")
 
-[node name="Foot4" type="MeshInstance3D" parent="."]
+[node name="Foot4" type="MeshInstance3D" parent="." unique_id=1970971837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735258, -0.4, -0.504569)
 mesh = SubResource("BoxMesh_u6nbs")
 skeleton = NodePath("../Body")
 
-[node name="Foot2" type="MeshInstance3D" parent="."]
+[node name="Foot2" type="MeshInstance3D" parent="." unique_id=855831379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.678754, -0.4, 0.433289)
 mesh = SubResource("BoxMesh_u6nbs")
 skeleton = NodePath("../Body")
 
-[node name="Foot3" type="MeshInstance3D" parent="."]
+[node name="Foot3" type="MeshInstance3D" parent="." unique_id=1924456038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.678754, -0.4, -0.392159)
 mesh = SubResource("BoxMesh_u6nbs")
 skeleton = NodePath("../Body")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=2101711965]
 collision_layer = 0
 collision_mask = 524288
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1659578239]
 shape = SubResource("SphereShape3D_m3sit")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_dgrso")
-}
-autoplay = "idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=239585247]
+libraries/ = SubResource("AnimationLibrary_dgrso")
+autoplay = &"idle"
 
-[node name="AttackTimer" type="Timer" parent="."]
+[node name="AttackTimer" type="Timer" parent="." unique_id=1605461862]
 wait_time = 3.0
 one_shot = true
 
-[node name="DamageTimer" type="Timer" parent="."]
+[node name="DamageTimer" type="Timer" parent="." unique_id=1888165175]
 wait_time = 1.1
 one_shot = true
 
-[node name="HealthBarMarker" type="Marker3D" parent="."]
+[node name="HealthBarMarker" type="Marker3D" parent="." unique_id=927649415]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.614038, 0)
 script = ExtResource("2_cq31e")
 
-[node name="Viewport2Din3D" parent="HealthBarMarker" instance=ExtResource("3_1vwgs")]
+[node name="Viewport2Din3D" parent="HealthBarMarker" unique_id=922149720 instance=ExtResource("3_1vwgs")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 screen_size = Vector2(0.5, 0.2)
 collision_layer = 0

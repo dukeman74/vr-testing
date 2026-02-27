@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2oya67kwmlmb"
-path="res://.godot/imported/ankh.gltf-1ffc7883cf543daef514bf81c1be0f31.scn"
+path="res://.godot/imported/ankh.gltf-dfb3765ad69865eecfbde04cd2ed099b.scn"
 
 [deps]
 
-source_file="res://assets/me/ankh.gltf"
-dest_files=["res://.godot/imported/ankh.gltf-1ffc7883cf543daef514bf81c1be0f31.scn"]
+source_file="res://assets/Duke/ankh.gltf"
+dest_files=["res://.godot/imported/ankh.gltf-dfb3765ad69865eecfbde04cd2ed099b.scn"]
 
 [params]
 
