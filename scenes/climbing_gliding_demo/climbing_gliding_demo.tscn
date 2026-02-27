@@ -28,7 +28,6 @@
 [ext_resource type="Script" uid="uid://bhvxjg31uide1" path="res://scenes/climbing_gliding_demo/sword_arts.gd" id="19_atcod"]
 [ext_resource type="PackedScene" uid="uid://ycpl7nhpr7ip" path="res://assets/quixel scans/longsword_prop.tscn" id="20_3nldn"]
 [ext_resource type="PackedScene" uid="uid://bgts3vpmjn6bb" path="res://addons/godot-xr-tools/functions/movement_wind.tscn" id="22"]
-[ext_resource type="PackedScene" uid="uid://cmk82eg1wyh0f" path="res://assets/quixel scans/castle_structure_sczvi_high.glb" id="24_0grua"]
 [ext_resource type="PackedScene" uid="uid://djkjuy7wct10q" path="res://scenes/pickable_demo/objects/grab_cube.tscn" id="25_q4dwc"]
 [ext_resource type="PackedScene" uid="uid://0xlsitpu17r1" path="res://addons/godot-xr-tools/functions/movement_footstep.tscn" id="26_kc18p"]
 [ext_resource type="PackedScene" uid="uid://q3pa72xp41cq" path="res://scenes/climbing_gliding_demo/objects/ladder.tscn" id="27_mmo3a"]
@@ -115,7 +114,7 @@ size = Vector2(0.16, 0.08)
 [sub_resource type="ViewportTexture" id="ViewportTexture_ofmrp"]
 viewport_path = NodePath("XROrigin3D/ControlPad/Viewport2Din3D/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c73u0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yyi4o"]
 cull_mode = 2
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_ofmrp")
@@ -366,7 +365,7 @@ player_body_path = NodePath("../PlayerBody")
 
 [node name="Screen" parent="XROrigin3D/ControlPad/Viewport2Din3D" index="1"]
 mesh = SubResource("QuadMesh_iq856")
-surface_material_override/0 = SubResource("StandardMaterial3D_c73u0")
+surface_material_override/0 = SubResource("StandardMaterial3D_yyi4o")
 
 [node name="CollisionShape3D" parent="XROrigin3D/ControlPad/Viewport2Din3D/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_nqhlk")
@@ -483,12 +482,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, -3, -26)
 [node name="Cliff14" parent="Terrain/Cliffs" index="13" unique_id=1772277090 instance=ExtResource("11")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, -8, 48)
 
-[node name="Stuff" type="Node3D" parent="Terrain" index="3" unique_id=895202510]
-
-[node name="Sketchfab_Scene2" parent="Terrain/Stuff" index="0" unique_id=18815398 instance=ExtResource("24_0grua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1092, 0, -57.5649)
-
-[node name="Dungeon" type="Node3D" parent="Terrain" index="4" unique_id=1437487085]
+[node name="Dungeon" type="Node3D" parent="Terrain" index="3" unique_id=1437487085]
 
 [node name="floor_tile_large2" parent="Terrain/Dungeon" index="0" unique_id=1498694496 instance=ExtResource("37_hunxo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 11, -29)
@@ -514,10 +508,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 11, -29)
 [node name="floor_tile_large9" parent="Terrain/Dungeon" index="7" unique_id=1992544840 instance=ExtResource("37_hunxo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 11, -33)
 
-[node name="wall2" parent="Terrain" index="5" unique_id=842387557 instance=ExtResource("38_kws7h")]
+[node name="wall2" parent="Terrain" index="4" unique_id=842387557 instance=ExtResource("38_kws7h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 11, -35)
 
-[node name="wall3" parent="Terrain" index="6" unique_id=1975196421 instance=ExtResource("38_kws7h")]
+[node name="wall3" parent="Terrain" index="5" unique_id=1975196421 instance=ExtResource("38_kws7h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 11, -35)
 
 [node name="Ladder" parent="." index="4" unique_id=1112106184 instance=ExtResource("27_mmo3a")]
